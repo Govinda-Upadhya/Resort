@@ -1,0 +1,33 @@
+<!-- room_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details</title>
+    <!-- Add any additional styles or scripts here -->
+</head>
+<body>
+
+    <h1>{{ room.room_type }}</h1>
+
+    {% if room %}
+        <div>
+            <img src="{{ room.room_image.url }}" alt="{{ room.room_type }}">
+            <p>Description: {{ room.description }}</p>
+            <p>Price: ${{ room.price }}</p>
+            <p>Availability: {% if room.is_available %}Available{% else %}Not Available{% endif %}</p>
+            <!-- Add other room details as needed -->
+        </div>
+        <a href="{% url 'book_now' room.room_no %}">
+            <button>Book Now</button>
+        </a>
+    {% else %}
+        <p>Room not found</p>
+    {% endif %}
+    
+
+    <!-- Add any additional content or features here -->
+
+</body>
+</html>

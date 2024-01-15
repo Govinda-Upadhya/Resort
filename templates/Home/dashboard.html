@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .cancel-button {
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+
+    <!-- Placeholder for user information -->
+    {% if user is not None %}
+    <h2>Welcome, {{user.username}}!</h2>
+
+    <!-- Table to display booked rooms -->
+    <h3>Booked Rooms</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                
+                <th>Date and Time of Booking</th>
+                <th>Price Paid</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example data, replace with actual user booking information -->
+            {% for booking in bookings %}
+            <tr data-booking-id="1">
+                <td>{{booking.start_day}}</td>
+                <td>{{booking.end_day}}</td>
+                
+                <td>{{booking.booked_on}}</td>
+                <td>{{booking.amount}}</td>
+                <td><button class="cancel-button"><a href="{% url "cancel" booking.id %}">Cancel</a></button></td>
+            </tr>
+            {% endfor %}
+           
+        </tbody>
+    </table>
+    {% endif %}
+    <script>
+    </script>
+</body>
+</html>

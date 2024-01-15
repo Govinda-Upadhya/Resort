@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+SignUp 
+{% endblock title %}
+
+{% block content  %}
+<form action="/login/signup" method="POST" >
+    {% csrf_token %}
+    {% for fields in form %}
+        {{fields.label}}
+        {{fields}}
+        {{fields.errors}}
+        <br><br>
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock content  %}
