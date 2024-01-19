@@ -25,12 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3wufs=ib(tiotc&!v%nnhln7daic8c)z$_fe=+@!rjn8aax#y)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
+
+ALLOWED_HOSTS = ['zeebarresort.com', 'www.zeebarresort.com']
 
 
-ALLOWED_HOSTS = [
-    getattr["APP_HOST"]
-]
 
 
 # Application definition
