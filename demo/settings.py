@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-3wufs=ib(tiotc&!v%nnhln7daic8c)z$_fe=+@!rjn8aax#y)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True 
 
-ALLOWED_HOSTS = ['zeebarresort.com', 'www.zeebarresort.com']
+ALLOWED_HOSTS = ['*']
+
 
 
 
